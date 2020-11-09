@@ -1,0 +1,63 @@
+package com.company;
+
+public class codeRank {
+
+    public static void main(String[] args) {
+        int numberOfFunction =5; //For example
+        String[][] pgMatrix = new String[numberOfFunction][numberOfFunction]; //M matrix
+        int[] someInput = new int[1];
+
+        pgMatrix[0][1]= "func1";  /// Initialize M
+        pgMatrix[0][2]= "func2";
+        pgMatrix[0][3]= "func3";
+        pgMatrix[0][4]= "func4";
+
+        pgMatrix[1][1]= "func1";
+        pgMatrix[1][2]= "func2";
+        pgMatrix[1][3]= "func3";
+        pgMatrix[1][4]= "func4";
+
+        func1(someInput,"main");
+        func2(someInput,"main");
+        func3(someInput,"main");
+        func4(someInput,"main");
+
+    }
+    
+    public static void func1(int[] input1, String whoCallme){
+        pgMatrix[whoCallme]["func1"] = pgMatrix[whoCallme]["func1"] +1; //Update M
+        int[] someInput = new int[1];   //Input for example
+//        some code here...
+
+        func2(someInput,"func1");
+        func3(someInput,"func1");
+        func4(someInput,"func1");
+    }
+
+    public static void func2(int[] input2, String whoCallme){
+        pgMatrix[whoCallme]["func2"] = pgMatrix[whoCallme]["func2"] +1; //Update M
+        int[] someInput = new int[1];
+//        some code here...
+
+        func3(someInput,"func2");
+        func4(someInput,"func2");
+    }
+
+    public static void func3(int[] input3, String whoCallme){
+        pgMatrix[whoCallme]["func3"] = pgMatrix[whoCallme]["func3"] +1; //Update M
+        int[] someInput = new int[1];
+//        some code here...
+
+        func3(someInput,"func3");
+    }
+
+    public static void func4(int[] input4, String whoCallme){
+        pgMatrix[whoCallme]["func4"] = pgMatrix[whoCallme]["func4"] +1; //Update M
+        int[] someInput = new int[1];
+//        some code here...
+
+        func1(someInput,"func4");
+        func3(someInput,"func4");
+    }
+
+}
